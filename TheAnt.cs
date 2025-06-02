@@ -15,7 +15,8 @@ namespace VuaensCrazyCards.Cards
         public override void SetupCard(CardInfo cardInfo, Gun gun, ApplyCardStats cardStats, CharacterStatModifiers statModifiers, Block block)
         {
             //Edits values on card itself, which are then applied to the player in `ApplyCardStats`
-            statModifiers.sizeMultiplier = 0.5f;
+            if characterStats.Size > 0.25 {
+            statModifiers.sizeMultiplier = 0.5f; }
             statModifiers.jump = 0.6f;
             statModifiers.health = 0.6f;
             gun.damage = 1.4f;
